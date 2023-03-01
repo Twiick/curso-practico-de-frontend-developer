@@ -35,7 +35,6 @@
             width: 300px;
             display: grid;
             grid-template-rows: auto 1fr auto;
-            justify-items: center;
         }
         .logo{
             width: 150px;
@@ -43,35 +42,27 @@
             display: none;
             justify-self: center;
         }
-        .title{
-            margin-bottom: 12px;
-            font-size: var(--lg);
-            text-align: center;
-        }
-        .subtitle{
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            font-weight: 300;
-        }
+        
         .form{
             display: flex;
             flex-direction: column;
         }
-        .email-image{
-            background: var(--text-input-field);
-            width: 132px;
-            height: 132px;
-            margin-bottom: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
+        .label{
+            margin-bottom: 4px;
+            font-size: var(--sm);
+            font-weight: 700;
         }
-        .email-image img{
-            width: 80px;
+        .input{
+            background-color: var(--text-input-field);
+            height: 32px;
+            padding: 8px;
+            margin-bottom: 12px;
+            font-size: var(--md);
+            border: none;
+            border-radius: 8px;
+        }
+        .input-email{
+            margin-bottom: 22px;
         }
         .primary-button{
             background: var(--hospital-green);
@@ -88,19 +79,36 @@
             margin-top: 14px;
             mask-border: 30px;
         }
-        .resend{
-            font-size: var(--sm);
-        }
-        .resend span{
-            color: var(--very-light-pink);
-        }
-        .resend a{
+        a{
+            margin-top: 32px;
+            margin-bottom: 52px;
             color: var(--hospital-green);
+            font-size: var(--sm);
             text-decoration: none;
+            text-align: center;
+        }
+        .secondary-button{
+            background: var(--white);
+            width: 300px;
+            height: 52px;
+            margin-bottom: 52px;
+            color: var(--hospital-green);
+            font-size: var(--md);
+            font-weight: 700;
+            border: solid 1px var(--hospital-green);
+            border-radius: 8px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
         }
         @media (max-width:640px){
             .logo{
                 display: block;
+            }
+        }
+        @media (min-width:641px){
+            .secondary-button{
+                position: initial;
             }
         }
     </style>
@@ -109,16 +117,15 @@
     <div class="login">
         <div class="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="Logo" class="logo">
-            <h1 class="title">Email has been sent</h1>
-            <p class="subtitle">Please check your inbox for instructions on how to reset the password</p>
-            <div class="email-image">
-                <img src="./icons/email.svg" alt="email">
-            </div>
-            <button class="primary-button login-button">Login</button>
-            <p class="resend">
-                <span>Didn´t receive the email?</span>
-                <a href="/">Resend</a>
-            </p>
+            <form action="/" class="form">
+                <label for="email" class="label">Email address</label>
+                <input type="email" id="email" placeholder="platzi@exaple.com" class="input input-email">
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" placeholder="●●●●●●●●●" class="input input-password">
+                <input type="submit" value="Login" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
+            </form>
+            <button class="secondary-button signup-button">Sign up</button>
         </div>
     </div>
 </body>
