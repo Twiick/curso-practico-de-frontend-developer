@@ -69,29 +69,23 @@
             font-size: var(--sm);
             font-weight: 700;
         }
-        .input{
-            background-color: var(--text-input-field);
-            height: 32px;
-            padding: 8px;
-            margin-bottom: 12px;
-            font-size: var(--md);
-            border: none;
-            border-radius: 8px;
+        .value{
+            margin: 8px 0 32px 0;
+            color: var(--very-light-pink);
         }
-        .input-name, .input-email, .input-password{
-            margin-bottom: 24px;
-        }
-        .primary-button{
-            background: var(--hospital-greem);
-            width: 100%;
+        .secondary-button{
+            background: var(--white);
+            width: 300px;
             height: 52px;
-            margin-bottom: 32px;
-            color: var(--white);
+            margin-bottom: 52px;
+            color: var(--hospital-green);
             font-size: var(--md);
             font-weight: 700;
-            border: none;
+            border: solid 1px var(--hospital-green);
             border-radius: 8px;
             cursor: pointer;
+            position: absolute;
+            bottom: 0;
         }
         .login-button{
             margin-top: 14px;
@@ -115,13 +109,13 @@
             <form action="/" class="form">
                 <div>
                     <label for="name" class="label">Name</label>
-                    <input type="text" id="name" placeholder="Camila Sanabria" class="input input-name">
+                    <p class="value">Camila Sanabria</p>
                     <label for="email" class="label">Email</label>
-                    <input type="email" id="email" placeholder="platzi@example.com" class="input input-email">
+                    <p class="value">platzi@example.com</p>
                     <label for="password" class="label">Password</label>
-                    <input type="password" id="password" placeholder="●●●●●●●●●" class="input input-password">
+                    <p class="value">●●●●●●●●●</p>
                 </div>
-                <input type="submit" value="Create" class="primary-button login-button">
+                <input type="submit" value="Edit" class="secondary-button login-button">
             </form>
         </div>
     </div>
